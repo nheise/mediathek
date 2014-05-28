@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<head>
+  <link rel="stylesheet" media="screen" href="/resources/css/screen.css" />
+  <script type="text/javascript" src="https://code.angularjs.org/1.2.9/angular.min.js"></script>
+  <script type="text/javascript" src="https://code.angularjs.org/1.2.9/angular-resource.min.js"></script>
+  <script type="text/javascript" src="/resources/js/app.js"></script>
+  <script type="text/javascript" src="/resources/js/Location.js"></script>
+  <script type="text/javascript" src="/resources/js/DirController.js"></script>
+</head>
+<body data-ng-app="app">
+<h1>Mediathek</h1>
+<div data-ng-controller="DirController">
+<p>{{path}}</p>
+<div data-ng-repeat="dirElement in dirElements">
+<a data-ng-show="dirElement.type=='d'" href="/mediathek{{path}}{{dirElement.name}}">{{dirElement.name}}</a>
+<a data-ng-show="dirElement.type=='f'" href="/mediathek/files{{path}}{{dirElement.name}}">{{dirElement.name}}</a>
+</div>
+</div>
+</body>
+</html>
