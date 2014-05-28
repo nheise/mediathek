@@ -31,8 +31,13 @@ restHttp.modules.put( {
 	    var path = queryString.parse( context.request.urlInfos.query ).path;
 	    var dirPath = documentRoot + path;
 	    dirInfos.stat( dirPath, function( error, info ) { 
-            	contextUtil.prepare200( context, JSON.stringify( info ) );
-	    	responseUtil.send200( context );
+            	if( error ) {
+			responseUtil.send400( context );
+		}
+		else {
+			contextUtil.prepare200( context, JSON.stringify( info ) );
+	    		responseUtil.send200( context );
+		}
 	    });
 	  }
         }

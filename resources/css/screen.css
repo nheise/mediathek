@@ -1,0 +1,25 @@
+
+* {
+  margin : 0;
+  padding : 0;
+}
+
+body {
+  font-family : DINAlternate-Bold, Arial;
+  margin-left: 20px;
+}
+
+h1 {
+  font-size : 4em;
+}
+
+h2 {
+  font-size : 2em;
+  font-weight : normal;
+  margin : 5px 0;
+}
+
+div.dir {
+  font-size : 2em;
+  margin-bottom : 3px;
+}
