@@ -15,6 +15,7 @@
 <a data-ng-show="dirElement.type=='d'" href="/mediathek{{path}}{{dirElement.name}}">{{dirElement.name}}</a>
 <a data-ng-show="dirElement.type=='f'" href="/mediathek/files{{path}}{{dirElement.name}}">{{dirElement.name}}</a>
 </div>
+<div class="isEmpty" data-ng-show="isEmpty">leer</div>
 <div class="pathError" data-ng-show="pathError">Pfad existiert nicht</div>
 </div>
 </body>

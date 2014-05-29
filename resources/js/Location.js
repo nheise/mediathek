@@ -6,7 +6,7 @@ function Location() {
   var searchParamsAsString = "";
   var searchParams = {};
   createLocationSearchParams();
-  var pathname = window.location.pathname;
+  var pathname = unescape( decodeURI( window.location.pathname ) );
 
   return {
     getId : getId,

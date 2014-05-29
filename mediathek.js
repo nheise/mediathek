@@ -10,7 +10,8 @@ var responseUtil = restHttp.responseUtil;
 var contextUtil = restHttp.contextUtil;
 var fileResponses = restHttp.fileResponses;
 
-var documentRoot = "../dirInfos";
+var documentRoot = "/media/usb0";
+//var documentRoot = "/home/pi/node_modules/mediathek";
 
 restHttp.modules.put( {
   id : 'mediathek',
@@ -30,6 +31,7 @@ restHttp.modules.put( {
            'application/json' : function( context ) {
 	    var path = queryString.parse( context.request.urlInfos.query ).path;
 	    var dirPath = documentRoot + path;
+console.log(dirPath);
 	    dirInfos.stat( dirPath, function( error, info ) { 
             	if( error ) {
 			responseUtil.send400( context );
@@ -70,4 +72,4 @@ restHttp.modules.put( {
   ]
 });
 
-restHttp.createServer( { name : 'Mediathek', ip : 'localhost', port : 10629 } );
+restHttp.createServer( { name : 'Mediathek', ip : '192.168.178.24', port : 8080 } );
